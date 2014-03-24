@@ -1,0 +1,12 @@
+<template name="lists">
+	<ul class="lists nav nav-pills nav-stacked">
+		<li><input class="name input-medium" placeholder="List Name" type="text" name="name" value="" id="name"></li>
+		{{#each lists}}
+	    	{{>listitem}}
+		{{/each}}
+	</ul>
+	
+</template>
+<template name="listitem">
+	<li class="list"><a href="#">{{name}}<i class="icon icon-trash pull-right removelist"></i></a></li>
+</template>

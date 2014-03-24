@@ -1,0 +1,32 @@
+<template name="todos">
+	<div class="page-header">
+	  <h1>{{list.name}} <small>List</small><input class="input-xlarge todotext" type="text" name="todotext" value="" id="todotext"></h1>
+	</div>
+	<table class="table table-striped table-hover table-bordered table-condensed">
+	    <thead>
+	        <tr>
+	            <th>Done</th>
+				<th>ToDo Text</th>
+				<th>Remove</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        {{#each todolist}}
+				{{>todolistitem}}
+			{{/each}}
+	    </tbody>
+	</table>
+</template>
+<template name="todolistitem">
+	<tr class="todoitem {{done_class}}">
+        <td><label class="checkbox">
+            <input class="check" type="checkbox" {{done_checkbox}} value="">
+        </label></td>
+		{{#if editing_todo}}
+		<td><input class="todotext" type="text" name="todotext" value="{{todotext}}" id="todotext"/></td>
+		{{else}}
+		<td class="todoitemtext">{{todotext}}</td>
+		{{/if}}
+		<td><i class="icon icon-trash removetodo"></i></td>
+    </tr>
+</template>

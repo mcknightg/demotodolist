@@ -1,0 +1,7 @@
+.todotext{
+	margin-left:10px;
+	margin-top:10px;
+}
+.done{
+	text-decoration:line-through;
+}
